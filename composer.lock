@@ -292,19 +292,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Spoje-NET/php-abraflexi.git",
-                "reference": "832886829a2bdf27062a1a35c8a7f672160546cd"
+                "reference": "c8b24b75a8c94d5c4117f6226345943b5e0d997e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Spoje-NET/php-abraflexi/zipball/832886829a2bdf27062a1a35c8a7f672160546cd",
-                "reference": "832886829a2bdf27062a1a35c8a7f672160546cd",
+                "url": "https://api.github.com/repos/Spoje-NET/php-abraflexi/zipball/c8b24b75a8c94d5c4117f6226345943b5e0d997e",
+                "reference": "c8b24b75a8c94d5c4117f6226345943b5e0d997e",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
                 "ext-gettext": "*",
                 "ext-json": "*",
-                "vitexsoftware/ease-core": ">=1.41"
+                "vitexsoftware/ease-core": "dev-main"
             },
             "require-dev": {
                 "ext-iconv": "*",
@@ -339,7 +339,7 @@
                 "issues": "https://github.com/Spoje-NET/php-abraflexi/issues",
                 "source": "https://github.com/Spoje-NET/php-abraflexi/tree/main"
             },
-            "time": "2024-03-07T14:49:41+00:00"
+            "time": "2024-03-19T21:11:20+00:00"
         },
         {
             "name": "vitexsoftware/ease-core",
@@ -472,12 +472,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "09691fc86e9e9bf2b936dcc9d1590a3061d223a7"
+                "reference": "46be4560c4cd4bab2b74882c0da39a4548a5cfbe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/09691fc86e9e9bf2b936dcc9d1590a3061d223a7",
-                "reference": "09691fc86e9e9bf2b936dcc9d1590a3061d223a7",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/46be4560c4cd4bab2b74882c0da39a4548a5cfbe",
+                "reference": "46be4560c4cd4bab2b74882c0da39a4548a5cfbe",
                 "shasum": ""
             },
             "require": {
@@ -488,7 +488,7 @@
             },
             "require-dev": {
                 "ircmaxell/php-yacc": "^0.0.7",
-                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0"
+                "phpunit/phpunit": "^9.0"
             },
             "default-branch": true,
             "bin": [
@@ -523,7 +523,7 @@
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
                 "source": "https://github.com/nikic/PHP-Parser/tree/master"
             },
-            "time": "2024-03-13T19:24:50+00:00"
+            "time": "2024-03-17T10:24:36+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -978,12 +978,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "4303b9eb21ae4ac9851cab832230856b39002c6f"
+                "reference": "3ad902d1cf0ea687da831244c261cb1dac046bde"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/4303b9eb21ae4ac9851cab832230856b39002c6f",
-                "reference": "4303b9eb21ae4ac9851cab832230856b39002c6f",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3ad902d1cf0ea687da831244c261cb1dac046bde",
+                "reference": "3ad902d1cf0ea687da831244c261cb1dac046bde",
                 "shasum": ""
             },
             "require": {
@@ -1071,7 +1071,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-03-17T06:04:57+00:00"
+            "time": "2024-03-19T16:11:36+00:00"
         },
         {
             "name": "sebastian/cli-parser",
