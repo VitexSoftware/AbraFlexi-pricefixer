@@ -1,0 +1,24 @@
+{
+    "name": "vitexsoftware/abraflexi-pricefixer",
+    "description": "Product price updater for AbraFlexi",
+    "type": "project",
+    "require": {
+        "spojenet/flexibee": "dev-main"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "11.1.x-dev"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Vitexsoftware\\AbraflexiPricefixer\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Cybervitexus",
+            "email": "info@vitexsoftware.cz"
+        }
+    ],
+    "minimum-stability": "dev"
+}
