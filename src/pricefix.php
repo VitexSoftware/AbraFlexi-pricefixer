@@ -5,19 +5,15 @@
  * @copyright (c) 2024, Vítězslav Dvořák
  */
 
- use AbraFlexi\Cenik;
+ use AbraFlexi\PriceFix\Bundler;
  use Ease\Shared;
  
- define('APP_NAME', 'AbraFlexi PriceFix crawler');
+ define('APP_NAME', 'AbraFlexi PriceFixer');
  
  require_once '../vendor/autoload.php';
  
  Shared::init(['ABRAFLEXI_URL', 'ABRAFLEXI_LOGIN', 'ABRAFLEXI_PASSWORD', 'ABRAFLEXI_COMPANY'], '../.env');
- new \Ease\Locale(Shared::cfg('LOCALIZE', 'cs_CZ'), '../i18n', 'abraflexi-mailer');
+ new \Ease\Locale(Shared::cfg('LOCALIZE', 'cs_CZ'), '../i18n', 'abraflexi-pricefixer');
  
- $productor = new \AbraFlexi\PriceFixer\Bundler("code:RASPBERRY");
+ $productor = new Bundler($argv[1]);
  $productor->saveBundlePrice($productor->overallPrice());
- print_r($productor->getData());
-
-
-//$productor->addStatusMessage(sprintf(_('Subproducts price is %s'), $subitemsPrice));

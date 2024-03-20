@@ -8,24 +8,24 @@
  * @author Vítězslav Dvořák <info@vitexsoftware.cz>
  */
 
-namespace AbraFlexi\PriceFixer;
+namespace AbraFlexi\PriceFix;
 
-class Bundler extends \AbraFlexi\Cenik
-{
+use AbraFlexi\Cenik;
+
+class Bundler extends \AbraFlexi\Cenik {
 
     /**
      * Load Product
      * 
      * @param string $code
      */
-    public function overallPrice()
-    {
+    public function overallPrice() {
         $subproductHelper = new Cenik();
 
         $subitemsPrice = 0;
-        
+
         foreach ($this->getDataValue('sady-a-komplety') as $item) {
-            $subproductHelper->loadFromAbraFlexi( \AbraFlexi\Functions::code($item['cenik']));
+            $subproductHelper->loadFromAbraFlexi(\AbraFlexi\Functions::code($item['cenik']));
             $subitemsPrice += $subproductHelper->getDataValue('cenaZakl');
         }
         return $subitemsPrice;
@@ -36,15 +36,27 @@ class Bundler extends \AbraFlexi\Cenik
      * 
      * @return boolean
      */
-    public function saveBundlePrice($price)
-    {
+    public function saveBundlePrice($price) {
+        $this->insertIntoAbraFlexi([
+            'id' => $this->getRecordIdent(),
+            'nakupCena' => $price,
+            'cena2' => $price,
+            'cena3' => $price,
+            'cena4' => $price,
+            'cena5' => $price
+            //"cenaZaklBezDph" ?
+            //"cenaZaklVcDph" ?
+            //"cenaZakl" ?
+                ]
+        );
+
         $supplier = new \AbraFlexi\RW([
             'cenik' => $this->getRecordCode(),
-            'firma' => 'code:' . \Ease\Shared::cfg('ABRAFLEXI_PROVIDER','code:PRICEFIXER'),
+            'firma' => \Ease\Shared::cfg('ABRAFLEXI_PROVIDER', 'code:PRICEFIXER'),
             'kodIndi' => $this->getDataValue('kod'),
             'primarni' => true,
             'nakupCena' => $price,
                 ], ['evidence' => 'dodavatel']);
-        return $supplier->lastCurlResponseCode == 201;
+        return $supplier->sync();
     }
 }

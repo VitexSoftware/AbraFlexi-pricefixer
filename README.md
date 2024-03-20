@@ -15,3 +15,6 @@ Here are the configuration keys used with AbraFlexi:
 - `ABRAFLEXI_COMPANY` - AbraFlexi company code
 
 Please make sure to set these configuration keys appropriately before running the code.
+
+Written for company mojavoda.sk
+![MojaVoda.sk](mojavoda.png?raw=true)
