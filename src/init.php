@@ -5,6 +5,7 @@
  *
  * @copyright (c) 2024, Vítězslav Dvořák
  */
+
 use Ease\Shared;
 
 define('APP_NAME', 'AbraFlexi PriceFix Init');

@@ -5,6 +5,7 @@
  *
  * @copyright (c) 2024, Vítězslav Dvořák
  */
+
 use AbraFlexi\Cenik;
 use Ease\Shared;
 
@@ -27,5 +28,5 @@ $bundler = new \AbraFlexi\PriceFix\Bundler();
 foreach ($bundles as $bundleCode => $bundle) {
     $bundler->loadFromAbraFlexi($bundleCode);
     $bundlePrice = $bundler->overallPrice();
-    $bundler->addStatusMessage('📦 '.\AbraFlexi\Functions::uncode($bundleCode) . '  = 💰 ' . $bundlePrice , $bundler->saveBundlePrice($bundlePrice) ? 'success' : 'error');
+    $bundler->addStatusMessage('📦 ' . \AbraFlexi\Functions::uncode($bundleCode) . '  = 💰 ' . $bundlePrice, $bundler->saveBundlePrice($bundlePrice) ? 'success' : 'error');
 }

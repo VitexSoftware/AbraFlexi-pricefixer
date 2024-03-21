@@ -1,4 +1,5 @@
 <?php
+
 /**
  * AbraFlexi Price Fixer
  *
@@ -9,7 +10,7 @@
 
 namespace AbraFlexi\PriceFix;
 
-class SadyAKomplety extends \AbraFlexi\RW {
+class SadyAKomplety extends \AbraFlexi\RW
+{
     public $evidence = 'sady-a-komplety';
 }
-

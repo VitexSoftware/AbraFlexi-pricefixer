@@ -1,0 +1,11 @@
+#!/bin/sh
+# postinst script for abraflexi-pricefixer
+
+set -e
+
+composer-debian abraflexi-pricefixer
+
+
+#DEBHELPER#
+
+exit 0

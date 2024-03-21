@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+# You must remove unused comment lines for the released package.
+#export DH_VERBOSE = 1
+#export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+#export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
+#export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+
+%:
+	dh $@
+
+override_dh_install:
+	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//'`'"'  debian/composer.json |sponge debian/tmp/composer.json
+	dh_install
+	sed -i -e 's/\.\.\/vendor/\/var\/lib\/composer\/abraflexi-pricefixer/g'   debian/abraflexi-pricefixer/usr/share/abraflexi-pricefixer/*.php
+	sed -i -e 's/\.\.\/.env//'                                          debian/abraflexi-pricefixer/usr/share/abraflexi-pricefixer/*.php
+	sed -i -e 's/\.\.\/i18n/\/usr\/share\/locale/g'                   debian/abraflexi-pricefixer/usr/share/abraflexi-pricefixer/*.php
+	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//'`'"'  debian/multiflexi-abraflexi-pricefixer/usr/lib/abraflexi-pricefixer/multiflexi/price_fixer.multiflexi.app.json | sponge debian/multiflexi-abraflexi-pricefixer/usr/lib/abraflexi-pricefixer/multiflexi/price_fixer.multiflexi.app.json
+

@@ -8,3 +8,10 @@ composer.phar
 /nbproject/private/
 /nbproject/
 /.vscode/
+/debian/abraflexi-pricefixer.substvars
+/debian/debhelper-build-stamp
+/debian/abraflexi-pricefixer/
+/debian/tmp/
+/debian/multiflexi-abraflexi-pricefixer.substvars
+/debian/multiflexi-abraflexi-pricefixer.debhelper.log
+/debian/.debhelper/

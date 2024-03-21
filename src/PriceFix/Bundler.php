@@ -12,14 +12,15 @@ namespace AbraFlexi\PriceFix;
 
 use AbraFlexi\Cenik;
 
-class Bundler extends \AbraFlexi\Cenik {
-
+class Bundler extends \AbraFlexi\Cenik
+{
     /**
      * Load Product
-     * 
+     *
      * @param string $code
      */
-    public function overallPrice() {
+    public function overallPrice()
+    {
         $subproductHelper = new Cenik();
 
         $subitemsPrice = 0;
@@ -33,10 +34,11 @@ class Bundler extends \AbraFlexi\Cenik {
 
     /**
      * Save Bundle Price
-     * 
+     *
      * @return boolean
      */
-    public function saveBundlePrice($price) {
+    public function saveBundlePrice($price)
+    {
         return $this->insertToAbraFlexi([
                     'id' => $this->getRecordIdent(),
                     'nakupCena' => $price,
@@ -47,18 +49,18 @@ class Bundler extends \AbraFlexi\Cenik {
                         //"cenaZaklBezDph" ?
                         //"cenaZaklVcDph" ?
                         //"cenaZakl" ?
-                        ]
-        );
+                        ]);
     }
 
     /**
      * Create Supplier Price provided by PriceFix
-     * 
+     *
      * @param float|int $price
-     * 
-     * @return boolean 
+     *
+     * @return boolean
      */
-    public function saveProviderPrice($price) {
+    public function saveProviderPrice($price)
+    {
         $supplier = new \AbraFlexi\RW([
             'cenik' => $this->getRecordCode(),
             'firma' => \Ease\Shared::cfg('ABRAFLEXI_PROVIDER', 'code:PRICEFIXER'),
