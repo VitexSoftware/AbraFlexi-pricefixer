@@ -33,6 +33,6 @@
             "type": "path",
             "url": "/usr/share/php/AbraFlexi"
         }
-    ]
+    ],
     "minimum-stability": "dev"
 }
