@@ -37,19 +37,28 @@ class Bundler extends \AbraFlexi\Cenik {
      * @return boolean
      */
     public function saveBundlePrice($price) {
-        $this->insertIntoAbraFlexi([
-            'id' => $this->getRecordIdent(),
-            'nakupCena' => $price,
-            'cena2' => $price,
-            'cena3' => $price,
-            'cena4' => $price,
-            'cena5' => $price
-            //"cenaZaklBezDph" ?
-            //"cenaZaklVcDph" ?
-            //"cenaZakl" ?
-                ]
+        return $this->insertToAbraFlexi([
+                    'id' => $this->getRecordIdent(),
+                    'nakupCena' => $price,
+                    'cena2' => $price,
+                    'cena3' => $price,
+                    'cena4' => $price,
+                    'cena5' => $price
+                        //"cenaZaklBezDph" ?
+                        //"cenaZaklVcDph" ?
+                        //"cenaZakl" ?
+                        ]
         );
+    }
 
+    /**
+     * Create Supplier Price provided by PriceFix
+     * 
+     * @param float|int $price
+     * 
+     * @return boolean 
+     */
+    public function saveProviderPrice($price) {
         $supplier = new \AbraFlexi\RW([
             'cenik' => $this->getRecordCode(),
             'firma' => \Ease\Shared::cfg('ABRAFLEXI_PROVIDER', 'code:PRICEFIXER'),

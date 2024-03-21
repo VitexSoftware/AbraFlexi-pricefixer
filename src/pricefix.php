@@ -15,5 +15,5 @@
  Shared::init(['ABRAFLEXI_URL', 'ABRAFLEXI_LOGIN', 'ABRAFLEXI_PASSWORD', 'ABRAFLEXI_COMPANY'], '../.env');
  new \Ease\Locale(Shared::cfg('LOCALIZE', 'cs_CZ'), '../i18n', 'abraflexi-pricefixer');
  
- $productor = new Bundler($argv[1]);
- $productor->saveBundlePrice($productor->overallPrice());
+ $completor = new Bundler($argv[1]);
+ $completor->saveBundlePrice($completor->overallPrice());
