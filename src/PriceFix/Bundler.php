@@ -12,33 +12,32 @@ namespace AbraFlexi\PriceFix;
 
 use AbraFlexi\Cenik;
 
-class Bundler extends \AbraFlexi\Cenik
-{
+class Bundler extends \AbraFlexi\Cenik {
+
     /**
-     * Load Product
-     *
-     * @param string $code
+     * calculate the selling price from the purchase prices of the price set 
+     * items
+     * 
+     * @return float
      */
-    public function overallPrice()
-    {
+    public function overallPrice() {
         $subproductHelper = new Cenik();
-
         $subitemsPrice = 0;
-
         foreach ($this->getDataValue('sady-a-komplety') as $item) {
             $subproductHelper->loadFromAbraFlexi(\AbraFlexi\Functions::code($item['cenik']));
-            $subitemsPrice += $subproductHelper->getDataValue('cenaZakl');
+            $subitemsPrice += $subproductHelper->getDataValue('nakupCena');
         }
         return $subitemsPrice;
     }
 
     /**
      * Save Bundle Price
+     * 
+     * @param float $price to save
      *
-     * @return boolean
+     * @return array
      */
-    public function saveBundlePrice($price)
-    {
+    public function saveBundlePrice($price) {
         return $this->insertToAbraFlexi([
                     'id' => $this->getRecordIdent(),
                     'nakupCena' => $price,
@@ -49,7 +48,7 @@ class Bundler extends \AbraFlexi\Cenik
                         //"cenaZaklBezDph" ?
                         //"cenaZaklVcDph" ?
                         //"cenaZakl" ?
-                        ]);
+        ]);
     }
 
     /**
@@ -59,8 +58,7 @@ class Bundler extends \AbraFlexi\Cenik
      *
      * @return boolean
      */
-    public function saveProviderPrice($price)
-    {
+    public function saveProviderPrice($price) {
         $supplier = new \AbraFlexi\RW([
             'cenik' => $this->getRecordCode(),
             'firma' => \Ease\Shared::cfg('ABRAFLEXI_PROVIDER', 'code:PRICEFIXER'),

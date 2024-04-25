@@ -8,3 +8,6 @@ buildx:
 
 drun:
 	docker run  -f Containerfile --env-file .env vitexsoftware/abraflexi-pricefixer:latest
+
+phar:
+        phar-composer build .

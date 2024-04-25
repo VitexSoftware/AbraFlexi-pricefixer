@@ -9,6 +9,7 @@
         "phpunit/phpunit": "11.1.x-dev"
     },
     "license": "MIT",
+    "bin": ["src/fixall.php", "src/pricefix.php", "src/init.php"],
     "autoload": {
         "psr-4": {
             "AbraFlexi\\PriceFix\\": "src/PriceFix/"
