@@ -1,12 +1,17 @@
-abraflexi-pricefixer (2.9.0) UNRELEASED; urgency=medium
+abraflexi-pricefixer (2.9.1) UNRELEASED; urgency=medium
+
+  * subitems quantity fix
+
+ -- Vítězslav Dvořák <info@vitexsoftware.cz>  Sun, 05 May 2024 15:38:06 +0200
+
+abraflexi-pricefixer (2.9.0) jammy; urgency=medium
 
   * Source price fix
 
- -- Vítězslav Dvořák <info@vitexsoftware.cz>  Thu, 25 Apr 2024 10:37:03 +0200
+ -- Vítězslav Dvořák <info@vitexsoftware.cz>  Sun, 05 May 2024 15:37:52 +0200
 
 abraflexi-pricefixer (2.8) jammy; urgency=low
 
-  * Initial release. Closes: #nnnn
-    <nnnn is the bug number of your ITP>
+  * Initial release.
 
  -- Vítězslav Dvořák <info@vitexsoftware.cz>  Thu, 25 Apr 2024 10:36:45 +0200

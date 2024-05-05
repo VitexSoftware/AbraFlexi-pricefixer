@@ -25,7 +25,7 @@ class Bundler extends \AbraFlexi\Cenik {
         $subitemsPrice = 0;
         foreach ($this->getDataValue('sady-a-komplety') as $item) {
             $subproductHelper->loadFromAbraFlexi(\AbraFlexi\Functions::code($item['cenik']));
-            $subitemsPrice += $subproductHelper->getDataValue('nakupCena');
+            $subitemsPrice += ($subproductHelper->getDataValue('nakupCena') * floatval($item['mnozMj']));
         }
         return $subitemsPrice;
     }

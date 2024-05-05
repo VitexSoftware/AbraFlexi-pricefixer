@@ -10,4 +10,6 @@ drun:
 	docker run  -f Containerfile --env-file .env vitexsoftware/abraflexi-pricefixer:latest
 
 phar:
-	phar-composer build .
+	php -d phar.readonly=off /usr/bin/phar-composer build .
+	chmod +x abraflexi-pricefixer.phar
+	mv abraflexi-pricefixer.phar abraflexi-pricefixer_`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//'`.phar
