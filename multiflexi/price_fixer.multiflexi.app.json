@@ -9,7 +9,7 @@
     "homepage": "https://github.com/VitexSoftware/AbraFlexi-pricefixer",
     "requirements": "AbraFlexi",
     "ociimage": "docker.io/vitexsoftware/abraflexi-pricefixer",
-    "version": "",
+    "topics": "AbraFlexi, Price, Fixer",
     "environment": {
         "ABRAFLEXI_COMPANY": {
             "type": "string",
