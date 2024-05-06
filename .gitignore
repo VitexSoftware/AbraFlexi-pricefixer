@@ -16,4 +16,6 @@ composer.phar
 /debian/multiflexi-abraflexi-pricefixer.debhelper.log
 /debian/.debhelper/
 /debian/multiflexi-abraflexi-pricefixer/
+/debian/files
+*.phar
 

@@ -1,8 +1,14 @@
-abraflexi-pricefixer (2.9.1) UNRELEASED; urgency=medium
+abraflexi-pricefixer (2.9.2) UNRELEASED; urgency=medium
+
+  * APP_DEBUG now print AppBanner
+
+ -- Vítězslav Dvořák <info@vitexsoftware.cz>  Mon, 06 May 2024 12:43:10 +0200
+
+abraflexi-pricefixer (2.9.1) jammy; urgency=medium
 
   * subitems quantity fix
 
- -- Vítězslav Dvořák <info@vitexsoftware.cz>  Sun, 05 May 2024 15:38:06 +0200
+ -- Vítězslav Dvořák <info@vitexsoftware.cz>  Mon, 06 May 2024 12:42:43 +0200
 
 abraflexi-pricefixer (2.9.0) jammy; urgency=medium
 
