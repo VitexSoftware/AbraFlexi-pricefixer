@@ -34,7 +34,11 @@ Please make sure to set these configuration keys appropriately before running th
 Runing
 ------
 
-When EASE_LOGGER contain `console` then colored output is shown:
+>> NOTE: please run `abraflexi-pricefixer-init` command before first run.
+
+When installed from debian package, the `abraflexi-pricefixer` command is availble systemwide.
+
+If EASE_LOGGER contain `console` then colored output is shown:
 
 ![run](run.png?raw=true)
 
