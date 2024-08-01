@@ -6,7 +6,7 @@
         "spojenet/flexibee": "dev-main"
     },
     "require-dev": {
-        "phpunit/phpunit": "11.1.x-dev"
+        "phpunit/phpunit": "*"
     },
     "license": "MIT",
     "bin": ["src/fixall.php", "src/pricefix.php", "src/init.php"],
@@ -17,7 +17,7 @@
     },
     "authors": [
         {
-            "name": "Cybervitexus",
+            "name": "CyberVitexus",
             "email": "info@vitexsoftware.cz"
         }
     ],

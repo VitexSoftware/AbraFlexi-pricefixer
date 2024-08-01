@@ -10,6 +10,7 @@
     "requirements": "AbraFlexi",
     "ociimage": "docker.io/vitexsoftware/abraflexi-pricefixer",
     "topics": "AbraFlexi, Price, Fixer",
+    "uuid": "2a485658-4c14-49de-addd-901d131e669e",
     "environment": {
         "ABRAFLEXI_COMPANY": {
             "type": "string",
@@ -39,6 +40,12 @@
             "type": "text",
             "description": "Default provider for bundle prices",
             "defval": "code:PRICEFIXER",
+            "required": false
+        },
+        "ABRAFLEXI_GROUP": {
+            "type": "text",
+            "description": "Group of Goods for sets of items",
+            "defval": "code:SADA",
             "required": false
         }
     },

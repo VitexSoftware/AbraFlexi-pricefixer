@@ -1,8 +1,15 @@
-abraflexi-pricefixer (2.9.2) UNRELEASED; urgency=medium
+abraflexi-pricefixer (2.10.0) UNRELEASED; urgency=medium
 
+  * Beta Release
+
+ -- vitex <info@vitexsoftware.cz>  Fri, 02 Aug 2024 00:28:01 +0200
+
+abraflexi-pricefixer (2.9.2) jammy; urgency=medium
+
+  [ Vítězslav Dvořák ]
   * APP_DEBUG now print AppBanner
 
- -- Vítězslav Dvořák <info@vitexsoftware.cz>  Mon, 06 May 2024 12:43:10 +0200
+ -- vitex <info@vitexsoftware.cz>  Fri, 02 Aug 2024 00:27:46 +0200
 
 abraflexi-pricefixer (2.9.1) jammy; urgency=medium
 

@@ -15,19 +15,66 @@ use AbraFlexi\Cenik;
 class Bundler extends \AbraFlexi\Cenik {
 
     /**
+     * 
+     * @var array
+     */
+    private $bundles = [];
+
+    /**
+     * Get Bundles
+     * 
+     * @return array
+     */
+    public function getBundles() {
+        $completor = new \AbraFlexi\PriceFix\SadyAKomplety();
+        $complets = $completor->getColumnsFromAbraFlexi('*', ['limit' => 0]);
+
+        $bundles = [];
+        foreach ($complets as $complet) {
+            $bundles[strval($complet['cenikSada'])][] = [strval($complet['cenik']) => $complet['mnozMj']];
+        }
+
+        return $bundles;
+    }
+
+    /**
      * calculate the selling price from the purchase prices of the price set 
      * items
      * 
      * @return float
      */
     public function overallPrice() {
-        $subproductHelper = new Cenik();
-        $subitemsPrice = 0;
+        $overAllPrice = 0;
+        $items = [];
         foreach ($this->getDataValue('sady-a-komplety') as $item) {
-            $subproductHelper->loadFromAbraFlexi(\AbraFlexi\Functions::code($item['cenik']));
-            $subitemsPrice += ($subproductHelper->getDataValue('nakupCena') * floatval($item['mnozMj']));
+            $overAllPrice += $this->getSubItemPrice($item['cenik']) * floatval($item['mnozMj']);
+            $items[] = $item['cenik'];
         }
-        return $subitemsPrice;
+        if ($overAllPrice == 0) {
+            $this->addStatusMessage($this->getRecordCode() . ': ' . implode(',', $items), 'debug');
+        }
+        return $overAllPrice;
+    }
+
+    /**
+     * get purchase price for price list item
+     * 
+     * @param string $pricelistCode
+     * 
+     * @return float|null
+     */
+    public function getSubItemPrice($pricelistCode) {
+        $group = \AbraFlexi\Functions::code(\Ease\Shared::cfg('ABRAFLEXI_GROUP', 'code:SADA'));
+        $subproductHelper = new Cenik();
+        $item = $this->getColumnsFromAbraFlexi(['nakupCena', 'sada', 'skupZboz'], ['id' => \AbraFlexi\Functions::code($pricelistCode)]);
+        if ($item[0]['nakupCena'] == 0) {
+            $this->addStatusMessage('Item ' . $pricelistCode . ' without purchase price  ', 'debug');
+        }
+        if ($item[0]['skupZboz'] != $group) {
+            $subproductHelper->insertToAbraFlexi(['id' => \AbraFlexi\Functions::code($pricelistCode), 'skupZboz' => $group]);
+            $subproductHelper->addStatusMessage(sprintf(_('%s: Fixing Group to %s '), $pricelistCode, $group), $subproductHelper->lastResponseCode == 201 ? 'success' : 'error');
+        }
+        return empty($item) ? null : $item[0]['nakupCena'];
     }
 
     /**
@@ -67,5 +114,18 @@ class Bundler extends \AbraFlexi\Cenik {
             'nakupCena' => $price,
                 ], ['evidence' => 'dodavatel']);
         return $supplier->sync();
+    }
+
+    /**
+     * Fix All Prices
+     */
+    public function fixAll() {
+        $this->bundles = $this->getBundles();
+        $pos = 0;
+        foreach ($this->bundles as $bundleCode => $bundle) {
+            $this->loadFromAbraFlexi($bundleCode);
+            $bundlePrice = $this->overallPrice();
+            $this->addStatusMessage(strval(++$pos) . '/' . strval(count($this->bundles)) . ' 📦 ' . \AbraFlexi\Functions::uncode($bundleCode) . '  = 💰 ' . strval($bundlePrice) . ' 💶', $this->saveBundlePrice($bundlePrice) ? 'success' : 'error');
+        }
     }
 }
