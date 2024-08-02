@@ -51,7 +51,7 @@ class Bundler extends \AbraFlexi\Cenik {
             $items[] = $item['cenik'];
         }
         if ($overAllPrice == 0) {
-            $this->addStatusMessage($this->getRecordCode() . ': ' . implode(',', $items), 'debug');
+            $this->addStatusMessage($this->getRecordCode(). ' Overall price: 0! : [' . implode(',', $items) . ']', 'warning');
         }
         return $overAllPrice;
     }
@@ -64,15 +64,10 @@ class Bundler extends \AbraFlexi\Cenik {
      * @return float|null
      */
     public function getSubItemPrice($pricelistCode) {
-        $group = \AbraFlexi\Functions::code(\Ease\Shared::cfg('ABRAFLEXI_GROUP', 'code:SADA'));
         $subproductHelper = new Cenik();
         $item = $this->getColumnsFromAbraFlexi(['nakupCena', 'sada', 'skupZboz'], ['id' => \AbraFlexi\Functions::code($pricelistCode)]);
         if ($item[0]['nakupCena'] == 0) {
             $this->addStatusMessage('Item ' . $pricelistCode . ' without purchase price  ', 'debug');
-        }
-        if ($item[0]['skupZboz'] != $group) {
-            $subproductHelper->insertToAbraFlexi(['id' => \AbraFlexi\Functions::code($pricelistCode), 'skupZboz' => $group]);
-            $subproductHelper->addStatusMessage(sprintf(_('%s: Fixing Group to %s '), $pricelistCode, $group), $subproductHelper->lastResponseCode == 201 ? 'success' : 'error');
         }
         return empty($item) ? null : $item[0]['nakupCena'];
     }
@@ -120,12 +115,20 @@ class Bundler extends \AbraFlexi\Cenik {
      * Fix All Prices
      */
     public function fixAll() {
+        $group = \AbraFlexi\Functions::code(\Ease\Shared::cfg('ABRAFLEXI_GROUP', 'code:SADA'));
         $this->bundles = $this->getBundles();
         $pos = 0;
         foreach ($this->bundles as $bundleCode => $bundle) {
+            $progress = strval(++$pos) . '/' . strval(count($this->bundles));
             $this->loadFromAbraFlexi($bundleCode);
+
+            if ($this->getDataValue('skupZboz') != $group) {
+                $this->insertToAbraFlexi(['id' => \AbraFlexi\Functions::code($bundleCode), 'skupZboz' => $group]);
+                $this->addStatusMessage($progress . ' ' . sprintf(_('%s: Fixing Group to %s '), $bundleCode, $group), $this->lastResponseCode == 201 ? 'success' : 'error');
+            }
+
             $bundlePrice = $this->overallPrice();
-            $this->addStatusMessage(strval(++$pos) . '/' . strval(count($this->bundles)) . ' 📦 ' . \AbraFlexi\Functions::uncode($bundleCode) . '  = 💰 ' . strval($bundlePrice) . ' 💶', $this->saveBundlePrice($bundlePrice) ? 'success' : 'error');
+            $this->addStatusMessage($progress . ' 📦 ' . \AbraFlexi\Functions::uncode($bundleCode) . '  = 💰 ' . strval($bundlePrice) . ' 💶', $this->saveBundlePrice($bundlePrice) ? 'success' : 'error');
         }
     }
 }
