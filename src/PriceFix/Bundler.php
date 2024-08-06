@@ -51,7 +51,7 @@ class Bundler extends \AbraFlexi\Cenik {
             $items[] = $item['cenik'];
         }
         if ($overAllPrice == 0) {
-            $this->addStatusMessage($this->getRecordCode(). ' Overall price: 0! : [' . implode(',', $items) . ']', 'warning');
+            $this->addStatusMessage($this->getRecordCode() . ' Overall price: 0! : [' . implode(',', $items) . ']', 'warning');
         }
         return $overAllPrice;
     }
@@ -121,14 +121,18 @@ class Bundler extends \AbraFlexi\Cenik {
         foreach ($this->bundles as $bundleCode => $bundle) {
             $progress = strval(++$pos) . '/' . strval(count($this->bundles));
             $this->loadFromAbraFlexi($bundleCode);
-
+            $pprice = $this->getDataValue('nakupCena');
             if ($this->getDataValue('skupZboz') != $group) {
                 $this->insertToAbraFlexi(['id' => \AbraFlexi\Functions::code($bundleCode), 'skupZboz' => $group]);
                 $this->addStatusMessage($progress . ' ' . sprintf(_('%s: Fixing Group to %s '), $bundleCode, $group), $this->lastResponseCode == 201 ? 'success' : 'error');
             }
 
             $bundlePrice = $this->overallPrice();
-            $this->addStatusMessage($progress . ' 📦 ' . \AbraFlexi\Functions::uncode($bundleCode) . '  = 💰 ' . strval($bundlePrice) . ' 💶', $this->saveBundlePrice($bundlePrice) ? 'success' : 'error');
+            if ($pprice != $bundlePrice) {
+                $this->addStatusMessage($progress . ' 📦 ' . \AbraFlexi\Functions::uncode($bundleCode) . '  = 💰 ' . strval($bundlePrice) . ' 💶', $this->saveBundlePrice($bundlePrice) ? 'success' : 'error');
+            } else {
+                $this->addStatusMessage($progress . ' 📦 ' . \AbraFlexi\Functions::uncode($bundleCode) . '  = 💰 ' . strval($bundlePrice) . ' 💶 - no change', 'info');
+            }
         }
     }
 }
