@@ -129,7 +129,7 @@ class Bundler extends \AbraFlexi\Cenik {
 
             $bundlePrice = $this->overallPrice();
             if ($pprice != $bundlePrice) {
-                $this->addStatusMessage($progress . ' 📦 ' . \AbraFlexi\Functions::uncode($bundleCode) . '  = 💰 ' . strval($bundlePrice) . ' 💶', $this->saveBundlePrice($bundlePrice) ? 'success' : 'error');
+                $this->addStatusMessage($progress . ' 📦 ' . \AbraFlexi\Functions::uncode($bundleCode) . ' ' . $pprice . ' ➟ 💰 ' . strval($bundlePrice) . ' 💶', $this->saveBundlePrice($bundlePrice) ? 'success' : 'error');
             } else {
                 $this->addStatusMessage($progress . ' 📦 ' . \AbraFlexi\Functions::uncode($bundleCode) . '  = 💰 ' . strval($bundlePrice) . ' 💶 - no change', 'info');
             }
