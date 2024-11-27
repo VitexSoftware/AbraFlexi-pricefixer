@@ -1,25 +1,34 @@
 {
     "name": "vitexsoftware/abraflexi-pricefixer",
     "description": "Product price updater for AbraFlexi",
-    "type": "project",
-    "require": {
-        "spojenet/flexibee": "dev-main"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "*"
-    },
     "license": "MIT",
     "bin": ["src/fixall.php", "src/pricefix.php", "src/init.php"],
-    "autoload": {
-        "psr-4": {
-            "AbraFlexi\\PriceFix\\": "src/PriceFix/"
-        }
-    },
+    "type": "project",
     "authors": [
         {
             "name": "CyberVitexus",
             "email": "info@vitexsoftware.cz"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "require": {
+        "spojenet/flexibee": "^3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "AbraFlexi\\PriceFix\\": "src/PriceFix/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*",
+        "phpstan/phpstan": "*",
+        "friendsofphp/php-cs-fixer": "^3.61",
+        "ergebnis/composer-normalize": "^2.43",
+        "ergebnis/php-cs-fixer-config": "^6.34"
+    },
+    "config": {
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true
+        }
+    }
 }

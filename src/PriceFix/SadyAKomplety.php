@@ -12,5 +12,5 @@ namespace AbraFlexi\PriceFix;
 
 class SadyAKomplety extends \AbraFlexi\RW
 {
-    public $evidence = 'sady-a-komplety';
+    public ?string $evidence = 'sady-a-komplety';
 }

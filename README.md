@@ -1,4 +1,5 @@
-# AbraFlexi-pricefixer
+# AbraFlexi Price Fixer
+
 Product price updater for AbraFlexi
 
 ![PriceFixer](abraflexi-pricefixer.svg?raw=true)
@@ -11,7 +12,6 @@ Product price updater for AbraFlexi
 
 ## Commands included
 
-
 * `abraflexi-pricefixer`       - fix price of one pricelist item
 * `abraflexi-pricefixer-all`   - fix price of all pricelist items
 * `abraflexi-pricefixer-init`  - prepare AbraFlexi for pricefixer
@@ -20,19 +20,17 @@ Product price updater for AbraFlexi
 
 Here are the configuration keys used with AbraFlexi:
 
-- `ABRAFLEXI_PROVIDER` - Addressbook Company used to be provider
-- `ABRAFLEXI_USERNAME` - AbraFlexi username
-- `ABRAFLEXI_PASSWORD` - AbraFlexi password
-- `ABRAFLEXI_URL` - AbraFlexi API URL
-- `ABRAFLEXI_COMPANY` - AbraFlexi company code
-- `ABRAFLEXI_GROUP` - Group of Goods for sets of items
-- `EASE_LOGGER` - List of logging drivers to be used
-
+* `ABRAFLEXI_PROVIDER` - Addressbook Company used to be provider
+* `ABRAFLEXI_USERNAME` - AbraFlexi username
+* `ABRAFLEXI_PASSWORD` - AbraFlexi password
+* `ABRAFLEXI_URL` - AbraFlexi API URL
+* `ABRAFLEXI_COMPANY` - AbraFlexi company code
+* `ABRAFLEXI_GROUP` - Group of Goods for sets of items
+* `EASE_LOGGER` - List of logging drivers to be used
 
 Please make sure to set these configuration keys appropriately before running the code.
 
-Runing
-------
+## Runing
 
 >> NOTE: please run `abraflexi-pricefixer-init` command before first run.
 
@@ -42,9 +40,16 @@ If EASE_LOGGER contain `console` then colored output is shown:
 
 ![run](run.png?raw=true)
 
+Written for [![MojaVoda.sk](mojavoda.png?raw=true)](https://www.mojavoda.sk/)
 
-Installation
-------------
+## MultiFlexi
+
+AbraFlexi PriceFixer is ready for run as [MultiFlexi](https://multiflexi.eu) application.
+See the full list of ready-to-run applications within the MultiFlexi platform on the [application list page](https://www.multiflexi.eu/apps.php).
+
+[![MultiFlexi App](https://github.com/VitexSoftware/MultiFlexi/blob/main/doc/multiflexi-app.svg)](https://www.multiflexi.eu/apps.php)
+
+## Installation
 
 There is repository for Debian/Ubuntu Linux distributions:
 
@@ -57,15 +62,3 @@ sudo apt update
 
 sudo apt install abraflexi-pricefixer
 ```
-
-
-
-Written for [![MojaVoda.sk](mojavoda.png?raw=true)](https://www.mojavoda.sk/)
-
-MultiFlexi
-----------
-
-AbraFlexi PriceFixer is ready for run as [MultiFlexi](https://multiflexi.eu) application.
-See the full list of ready-to-run applications within the MultiFlexi platform on the [application list page](https://www.multiflexi.eu/apps.php).
-
-[![MultiFlexi App](https://github.com/VitexSoftware/MultiFlexi/blob/main/doc/multiflexi-app.svg)](https://www.multiflexi.eu/apps.php)

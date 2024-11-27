@@ -1,8 +1,8 @@
-abraflexi-pricefixer (2.11.0) UNRELEASED; urgency=medium
+abraflexi-pricefixer (2.11.0) jammy; urgency=medium
 
   * Do not save unchanged price
 
- -- vitex <info@vitexsoftware.cz>  Tue, 06 Aug 2024 19:23:00 +0200
+ -- vitex <info@vitexsoftware.cz>  Wed, 27 Nov 2024 18:58:21 +0100
 
 abraflexi-pricefixer (2.10.0) jammy; urgency=medium
 
