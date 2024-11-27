@@ -1,5 +1,7 @@
 # AbraFlexi Price Fixer
 
+[![wakatime](https://wakatime.com/badge/user/5abba9ca-813e-43ac-9b5f-b1cfdf3dc1c7/project/018e4b01-3133-41a5-8bc4-39752d34fe20.svg)](https://wakatime.com/badge/user/5abba9ca-813e-43ac-9b5f-b1cfdf3dc1c7/project/018e4b01-3133-41a5-8bc4-39752d34fe20)
+
 Product price updater for AbraFlexi
 
 ![PriceFixer](abraflexi-pricefixer.svg?raw=true)
@@ -8,7 +10,6 @@ Product price updater for AbraFlexi
 * Count purchase prices for set of producs.
 * Set Group of goods for meber of bundles to ABRAFLEXI_GROUP
 
-[![wakatime](https://wakatime.com/badge/user/5abba9ca-813e-43ac-9b5f-b1cfdf3dc1c7/project/018e4b01-3133-41a5-8bc4-39752d34fe20.svg)](https://wakatime.com/badge/user/5abba9ca-813e-43ac-9b5f-b1cfdf3dc1c7/project/018e4b01-3133-41a5-8bc4-39752d34fe20)
 
 ## Commands included
 
