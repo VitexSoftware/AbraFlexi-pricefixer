@@ -21,3 +21,5 @@ composer.phar
 *.phar
 
 /social-preview.png
+/.build/
+

@@ -29,7 +29,7 @@ buildimage: ## Build container image for current Architecture
 
 .PHONY: buildx
 buildx: ## Build container image all architectures
-	docker buildx build  -f Containerfile  . --push --platform linux/arm/v7,linux/arm64/v8,linux/amd64 --tag vitexsoftware/abraflexi-pricefixer:latest
+	docker buildx build  -f Containerfile  . --push --platform linux/arm/v7,linux/arm64/v8,linux/amd64 --tag vitexsoftware/abraflexi-pricefixer:`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//'`
 
 .PHONY: drun
 drun: ## Run image using local docker

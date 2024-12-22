@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 /**
- * This file is part of the AbraFlexi Reminder package
+ * This file is part of the AbraFlexiPriceFixer package
  *
- * https://github.com/VitexSoftware/abraflexi-reminder
+ * https://github.com/VitexSoftware/AbraFlexi-pricefixer
  *
  * (c) Vítězslav Dvořák <http://vitexsoftware.com>
  *

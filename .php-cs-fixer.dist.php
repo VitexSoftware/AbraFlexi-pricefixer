@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /**
- * This file is part of the MultiFlexi package
+ * This file is part of the AbraFlexiPriceFixer package
  *
  * https://github.com/VitexSoftware/AbraFlexi-pricefixer
  *
@@ -18,9 +18,9 @@ use Ergebnis\PhpCsFixer\Config\Rules;
 use Ergebnis\PhpCsFixer\Config\RuleSet\Php74;
 
 $header = <<<'HEADER'
-This file is part of the MultiFlexi package
+This file is part of the AbraFlexiPriceFixer package
 
-https://multiflexi.eu/
+https://github.com/VitexSoftware/AbraFlexi-pricefixer
 
 (c) Vítězslav Dvořák <http://vitexsoftware.com>
 
