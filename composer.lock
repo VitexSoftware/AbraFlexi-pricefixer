@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d355275f063009aa482e35132caf6197",
+    "content-hash": "e3b9c5c5075388d095688e9efc329ab3",
     "packages": [
         {
             "name": "pear/console_getopt",
@@ -131,12 +131,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pear/Mail_Mime.git",
-                "reference": "f5ecf88e0a45dcbe897f804cd882eb9667532cbd"
+                "reference": "4c0d7488e0cdefa5197be0d6c08a277427fa0e89"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pear/Mail_Mime/zipball/f5ecf88e0a45dcbe897f804cd882eb9667532cbd",
-                "reference": "f5ecf88e0a45dcbe897f804cd882eb9667532cbd",
+                "url": "https://api.github.com/repos/pear/Mail_Mime/zipball/4c0d7488e0cdefa5197be0d6c08a277427fa0e89",
+                "reference": "4c0d7488e0cdefa5197be0d6c08a277427fa0e89",
                 "shasum": ""
             },
             "require": {
@@ -175,7 +175,7 @@
                 "issues": "http://pear.php.net/bugs/search.php?cmd=display&package_name[]=Mail_Mime",
                 "source": "https://github.com/pear/Mail_Mime"
             },
-            "time": "2024-04-01T08:15:26+00:00"
+            "time": "2025-01-07T08:51:58+00:00"
         },
         {
             "name": "pear/pear-core-minimal",
@@ -288,29 +288,30 @@
         },
         {
             "name": "spojenet/flexibee",
-            "version": "3.3.0",
+            "version": "3.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Spoje-NET/php-abraflexi.git",
-                "reference": "0e578c4280e1dfd15982a2c1cb84fcadddc180f8"
+                "reference": "94ba54a08b66945caa2e79123a4d75bc4974d609"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Spoje-NET/php-abraflexi/zipball/0e578c4280e1dfd15982a2c1cb84fcadddc180f8",
-                "reference": "0e578c4280e1dfd15982a2c1cb84fcadddc180f8",
+                "url": "https://api.github.com/repos/Spoje-NET/php-abraflexi/zipball/94ba54a08b66945caa2e79123a4d75bc4974d609",
+                "reference": "94ba54a08b66945caa2e79123a4d75bc4974d609",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
                 "ext-gettext": "*",
                 "ext-json": "*",
-                "vitexsoftware/ease-core": "^1.45"
+                "php": "^8.1",
+                "vitexsoftware/ease-core": "^1.48"
             },
             "require-dev": {
-                "ergebnis/composer-normalize": "^2.43",
-                "ergebnis/php-cs-fixer-config": "^6.34",
+                "ergebnis/composer-normalize": "^2.47",
+                "ergebnis/php-cs-fixer-config": "^6.46",
                 "ext-iconv": "*",
-                "friendsofphp/php-cs-fixer": "^3.61",
+                "friendsofphp/php-cs-fixer": "^3.75",
                 "phing/phing": "*",
                 "phpstan/phpstan": "*",
                 "phpunit/phpunit": "*",
@@ -341,22 +342,22 @@
             ],
             "support": {
                 "issues": "https://github.com/Spoje-NET/php-abraflexi/issues",
-                "source": "https://github.com/Spoje-NET/php-abraflexi/tree/3.3.0"
+                "source": "https://github.com/Spoje-NET/php-abraflexi/tree/3.6.0"
             },
-            "time": "2024-11-17T13:00:32+00:00"
+            "time": "2025-08-09T21:20:37+00:00"
         },
         {
             "name": "vitexsoftware/ease-core",
-            "version": "1.45.0",
+            "version": "1.48",
             "source": {
                 "type": "git",
                 "url": "https://github.com/VitexSoftware/php-ease-core.git",
-                "reference": "eb8c99a86afde580b6451cc4c45753ab6ee5bc00"
+                "reference": "b9d31cf07d62c1011a50f490f3801e7845dafdbc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/VitexSoftware/php-ease-core/zipball/eb8c99a86afde580b6451cc4c45753ab6ee5bc00",
-                "reference": "eb8c99a86afde580b6451cc4c45753ab6ee5bc00",
+                "url": "https://api.github.com/repos/VitexSoftware/php-ease-core/zipball/b9d31cf07d62c1011a50f490f3801e7845dafdbc",
+                "reference": "b9d31cf07d62c1011a50f490f3801e7845dafdbc",
                 "shasum": ""
             },
             "require": {
@@ -375,6 +376,7 @@
                 "friendsofphp/php-cs-fixer": "^3.61",
                 "phpstan/phpstan": "*",
                 "phpunit/phpunit": "*",
+                "rector/rector": "^2.0",
                 "roave/security-advisories": "dev-latest"
             },
             "type": "library",
@@ -399,7 +401,7 @@
             "homepage": "http://v.s.cz/ease.php",
             "support": {
                 "issues": "https://github.com/VitexSoftware/php-ease-core/issues",
-                "source": "https://github.com/VitexSoftware/php-ease-core/tree/1.45.0"
+                "source": "https://github.com/VitexSoftware/php-ease-core/tree/1.48"
             },
             "funding": [
                 {
@@ -407,7 +409,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2024-11-15T01:24:15+00:00"
+            "time": "2025-04-17T17:51:01+00:00"
         }
     ],
     "packages-dev": [
