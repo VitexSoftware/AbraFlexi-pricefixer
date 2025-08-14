@@ -24,7 +24,7 @@ Shared::init(['ABRAFLEXI_URL', 'ABRAFLEXI_LOGIN', 'ABRAFLEXI_PASSWORD', 'ABRAFLE
 
 $bundler = new \AbraFlexi\PriceFix\Bundler();
 
-if (\Ease\Shared::cfg('APP_DEBUG')) {
+if (Shared::cfg('APP_DEBUG')) {
     $bundler->logBanner();
 }
 

@@ -21,7 +21,8 @@ class Bundler extends Cenik
 {
     /**
      * Bundles.
-     * @var array<string, list<array<string, mixed>>> $bundles
+     *
+     * @var array<string, list<array<string, mixed>>>
      */
     private array $bundles = [];
 
@@ -95,9 +96,9 @@ class Bundler extends Cenik
      *
      * @param float $price to save
      *
-     * @return array
+     * @return array<string, mixed>|bool
      */
-    public function saveBundlePrice($price)
+    public function saveBundlePrice(float $price)
     {
         return $this->insertToAbraFlexi([
             'id' => $this->getRecordIdent(),
