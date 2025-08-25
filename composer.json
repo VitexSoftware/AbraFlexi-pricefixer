@@ -12,7 +12,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "spojenet/flexibee": "^3.6"
+        "spojenet/flexibee": "^2025.7"
     },
     "autoload": {
         "psr-4": {
