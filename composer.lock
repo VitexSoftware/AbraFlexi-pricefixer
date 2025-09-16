@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "abcf47e268b891a72db56a06d4661f83",
+    "content-hash": "b7202350d3617ceeaf8dcdd21912e71d",
     "packages": [
         {
             "name": "pear/console_getopt",
@@ -1416,16 +1416,16 @@
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v3.87.1",
+            "version": "v3.87.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer.git",
-                "reference": "2f5170365e2a422d0c5421f9c8818b2c078105f6"
+                "reference": "da5f0a7858c79b56fc0b8c36d3efcfe5f37f0992"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/2f5170365e2a422d0c5421f9c8818b2c078105f6",
-                "reference": "2f5170365e2a422d0c5421f9c8818b2c078105f6",
+                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/da5f0a7858c79b56fc0b8c36d3efcfe5f37f0992",
+                "reference": "da5f0a7858c79b56fc0b8c36d3efcfe5f37f0992",
                 "shasum": ""
             },
             "require": {
@@ -1508,7 +1508,7 @@
             ],
             "support": {
                 "issues": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/issues",
-                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.87.1"
+                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.87.2"
             },
             "funding": [
                 {
@@ -1516,7 +1516,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-09-02T15:27:36+00:00"
+            "time": "2025-09-10T09:51:40+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -4180,12 +4180,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "1300845638f13d525067cdbb273a0dc8e391a3d8"
+                "reference": "160f8086bb161c804acc79e79276e0d49ded02af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/1300845638f13d525067cdbb273a0dc8e391a3d8",
-                "reference": "1300845638f13d525067cdbb273a0dc8e391a3d8",
+                "url": "https://api.github.com/repos/symfony/console/zipball/160f8086bb161c804acc79e79276e0d49ded02af",
+                "reference": "160f8086bb161c804acc79e79276e0d49ded02af",
                 "shasum": ""
             },
             "require": {
@@ -4270,7 +4270,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-09-09T14:30:21+00:00"
+            "time": "2025-09-15T13:39:10+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -5448,12 +5448,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/string.git",
-                "reference": "78fe19014d9ece315a99b71bc4c3da284630859b"
+                "reference": "f929eccf09531078c243df72398560e32fa4cf4f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/string/zipball/78fe19014d9ece315a99b71bc4c3da284630859b",
-                "reference": "78fe19014d9ece315a99b71bc4c3da284630859b",
+                "url": "https://api.github.com/repos/symfony/string/zipball/f929eccf09531078c243df72398560e32fa4cf4f",
+                "reference": "f929eccf09531078c243df72398560e32fa4cf4f",
                 "shasum": ""
             },
             "require": {
@@ -5468,7 +5468,6 @@
             },
             "require-dev": {
                 "symfony/emoji": "^7.4|^8.0",
-                "symfony/error-handler": "^7.4|^8.0",
                 "symfony/http-client": "^7.4|^8.0",
                 "symfony/intl": "^7.4|^8.0",
                 "symfony/translation-contracts": "^2.5|^3.0",
@@ -5531,7 +5530,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-09-08T07:00:56+00:00"
+            "time": "2025-09-11T14:37:55+00:00"
         },
         {
             "name": "theseer/tokenizer",
