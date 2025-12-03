@@ -1,8 +1,14 @@
-abraflexi-pricefixer (2.11.1) UNRELEASED; urgency=medium
+abraflexi-pricefixer (2.11.2) UNRELEASED; urgency=medium
+
+  * Refactors pipeline scripts and improves localization
+
+ -- vitex <info@vitexsoftware.cz>  Wed, 03 Dec 2025 12:35:31 +0100
+
+abraflexi-pricefixer (2.11.1) jammy; urgency=medium
 
   * v2.11.1 release
 
- -- vitex <info@vitexsoftware.cz>  Wed, 27 Nov 2024 22:30:01 +0100
+ -- vitex <info@vitexsoftware.cz>  Wed, 03 Dec 2025 12:35:11 +0100
 
 abraflexi-pricefixer (2.11.0) jammy; urgency=medium
 

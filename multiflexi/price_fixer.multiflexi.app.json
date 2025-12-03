@@ -4,11 +4,11 @@
   "uuid": "2a485658-4c14-49de-addd-901d131e669e",
   "name": {
     "en": "Price Fixer",
-    "cs": "Price Fixer"
+    "cs": "Opravovač cen"
   },
   "description": {
     "en": "Bundle product price updater for AbraFlexi",
-    "cs": "Bundle product price updater for AbraFlexi"
+    "cs": "Aktualizátor cen sad produktů pro AbraFlexi"
   },
   "tags": [
     "AbraFlexi",
@@ -41,7 +41,7 @@
       "type": "password",
       "description": {
         "en": "AbraFlexi password",
-        "cs": "AbraFlexi password"
+        "cs": "AbraFlexi heslo"
       },
       "defval": "winstrom",
       "required": false,
@@ -61,7 +61,7 @@
       "type": "string",
       "description": {
         "en": "Default provider for bundle prices",
-        "cs": "Default provider for bundle prices"
+        "cs": "Výchozí dodavatel pro ceny sad"
       },
       "defval": "code:PRICEFIXER",
       "required": false,
@@ -71,7 +71,7 @@
       "type": "string",
       "description": {
         "en": "Group of Goods for sets of items",
-        "cs": "Group of Goods for sets of items"
+        "cs": "Skupina zboží pro sady položek"
       },
       "defval": "code:SADA",
       "required": false,
@@ -81,7 +81,7 @@
       "type": "string",
       "description": {
         "en": "write log messages using",
-        "cs": "write log messages using"
+        "cs": "zapisovat log zprávy pomocí"
       },
       "defval": "console|syslog",
       "required": false,

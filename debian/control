@@ -17,7 +17,7 @@ Description: Product price updater for AbraFlexi
  Bundle product price updater for AbraFlexi
 
 Package: multiflexi-abraflexi-pricefixer
-Depends: abraflexi-pricefixer, multiflexi
+Depends: abraflexi-pricefixer, multiflexi-cli
 Architecture: all
 Section: web
 Priority: optional
