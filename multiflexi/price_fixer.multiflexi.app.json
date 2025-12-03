@@ -1,91 +1,91 @@
 {
-    "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/multiflexi.app.schema.json",
-    "schemaVersion": "3.0.0",
-    "uuid": "2a485658-4c14-49de-addd-901d131e669e",
-    "name": {
-        "en": "Price Fixer",
-        "cs": "Price Fixer"
+  "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/multiflexi.app.schema.json",
+  "schemaVersion": "3.2.1",
+  "uuid": "2a485658-4c14-49de-addd-901d131e669e",
+  "name": {
+    "en": "Price Fixer",
+    "cs": "Price Fixer"
+  },
+  "description": {
+    "en": "Bundle product price updater for AbraFlexi",
+    "cs": "Bundle product price updater for AbraFlexi"
+  },
+  "tags": [
+    "AbraFlexi",
+    "Price",
+    "Fixer"
+  ],
+  "homepage": "https://github.com/VitexSoftware/AbraFlexi-pricefixer",
+  "image": "",
+  "ociimage": "docker.io/vitexsoftware/abraflexi-pricefixer",
+  "executable": "abraflexi-pricefixer-all",
+  "environment": {
+    "ABRAFLEXI_COMPANY": {
+      "type": "string",
+      "description": "",
+      "defval": "demo_de",
+      "required": false,
+      "category": "API"
     },
-    "description": {
-        "en": "Bundle product price updater for AbraFlexi",
-        "cs": "Bundle product price updater for AbraFlexi"
+    "ABRAFLEXI_LOGIN": {
+      "type": "string",
+      "description": {
+        "en": "AbraFlexi Login",
+        "cs": "AbraFlexi Login"
+      },
+      "defval": "winstrom",
+      "required": false,
+      "category": "API"
     },
-    "tags": [
-        "AbraFlexi",
-        "Price",
-        "Fixer"
-    ],
-    "homepage": "https://github.com/VitexSoftware/AbraFlexi-pricefixer",
-    "image": "",
-    "ociimage": "docker.io/vitexsoftware/abraflexi-pricefixer",
-    "executable": "abraflexi-pricefixer-all",
-    "environment": {
-        "ABRAFLEXI_COMPANY": {
-            "type": "string",
-            "description": "",
-            "defval": "demo_de",
-            "required": false,
-            "category": "API"
-        },
-        "ABRAFLEXI_LOGIN": {
-            "type": "string",
-            "description": {
-                "en": "AbraFlexi Login",
-                "cs": "AbraFlexi Login"
-            },
-            "defval": "winstrom",
-            "required": false,
-            "category": "API"
-        },
-        "ABRAFLEXI_PASSWORD": {
-            "type": "password",
-            "description": {
-                "en": "AbraFlexi password",
-                "cs": "AbraFlexi password"
-            },
-            "defval": "winstrom",
-            "required": false,
-            "category": "API"
-        },
-        "ABRAFLEXI_URL": {
-            "type": "string",
-            "description": {
-                "en": "AbraFlexi Server URI",
-                "cs": "AbraFlexi Server URI"
-            },
-            "defval": "https://demo.flexibee.eu:5434",
-            "required": false,
-            "category": "API"
-        },
-        "ABRAFLEXI_PROVIDER": {
-            "type": "text",
-            "description": {
-                "en": "Default provider for bundle prices",
-                "cs": "Default provider for bundle prices"
-            },
-            "defval": "code:PRICEFIXER",
-            "required": false,
-            "category": "API"
-        },
-        "ABRAFLEXI_GROUP": {
-            "type": "text",
-            "description": {
-                "en": "Group of Goods for sets of items",
-                "cs": "Group of Goods for sets of items"
-            },
-            "defval": "code:SADA",
-            "required": false,
-            "category": "API"
-        },
-        "EASE_LOGGER": {
-            "type": "string",
-            "description": {
-                "en": "write log messages using",
-                "cs": "write log messages using"
-            },
-            "defval": "console|syslog",
-            "required": false,
-            "category": "Behavior"
-        }
+    "ABRAFLEXI_PASSWORD": {
+      "type": "password",
+      "description": {
+        "en": "AbraFlexi password",
+        "cs": "AbraFlexi password"
+      },
+      "defval": "winstrom",
+      "required": false,
+      "category": "API"
+    },
+    "ABRAFLEXI_URL": {
+      "type": "string",
+      "description": {
+        "en": "AbraFlexi Server URI",
+        "cs": "AbraFlexi Server URI"
+      },
+      "defval": "https://demo.flexibee.eu:5434",
+      "required": false,
+      "category": "API"
+    },
+    "ABRAFLEXI_PROVIDER": {
+      "type": "string",
+      "description": {
+        "en": "Default provider for bundle prices",
+        "cs": "Default provider for bundle prices"
+      },
+      "defval": "code:PRICEFIXER",
+      "required": false,
+      "category": "API"
+    },
+    "ABRAFLEXI_GROUP": {
+      "type": "string",
+      "description": {
+        "en": "Group of Goods for sets of items",
+        "cs": "Group of Goods for sets of items"
+      },
+      "defval": "code:SADA",
+      "required": false,
+      "category": "API"
+    },
+    "EASE_LOGGER": {
+      "type": "string",
+      "description": {
+        "en": "write log messages using",
+        "cs": "write log messages using"
+      },
+      "defval": "console|syslog",
+      "required": false,
+      "category": "Behavior"
     }
+  }
 }
