@@ -1,8 +1,14 @@
-abraflexi-pricefixer (2.11.2) UNRELEASED; urgency=medium
+abraflexi-pricefixer (2.11.3) UNRELEASED; urgency=medium
+
+  * deps updata
+
+ -- vitex <info@vitexsoftware.cz>  Sat, 14 Mar 2026 18:06:47 +0100
+
+abraflexi-pricefixer (2.11.2) jammy; urgency=medium
 
   * Refactors pipeline scripts and improves localization
 
- -- vitex <info@vitexsoftware.cz>  Wed, 03 Dec 2025 12:35:31 +0100
+ -- vitex <info@vitexsoftware.cz>  Sat, 14 Mar 2026 18:06:30 +0100
 
 abraflexi-pricefixer (2.11.1) jammy; urgency=medium
 
