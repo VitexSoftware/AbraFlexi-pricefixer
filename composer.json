@@ -10,9 +10,8 @@
             "email": "info@vitexsoftware.cz"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
-        "spojenet/flexibee": "^2025.7"
+        "spojenet/flexibee": "^3.7"
     },
     "autoload": {
         "psr-4": {
