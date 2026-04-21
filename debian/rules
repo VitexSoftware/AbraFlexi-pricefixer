@@ -20,6 +20,8 @@ override_dh_install:
 		debian/abraflexi-pricefixer/usr/share/php/abraflexi-pricefixer/autoload.php
 	sed -i "s|: 'unknown'|: '$(PKG_SOURCE)'|" \\
 		debian/abraflexi-pricefixer/usr/share/php/abraflexi-pricefixer/autoload.php
+	sed -i "s|: '0.0.0'|: '$(PKG_VERSION)'|" \\
+		debian/abraflexi-pricefixer/usr/share/php/abraflexi-pricefixer/autoload.php
 	sed -i "2a defined('APP_VERSION') || define('APP_VERSION', '$(PKG_VERSION)');" \
 		debian/abraflexi-pricefixer/usr/share/php/abraflexi-pricefixer/autoload.php
 	sed -i -e 's/\.\.\/vendor/\/usr\/share\/php\/abraflexi-pricefixer/g'   debian/abraflexi-pricefixer/usr/share/abraflexi-pricefixer/*.php
