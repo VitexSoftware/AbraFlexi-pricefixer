@@ -4,3 +4,5 @@ src/PriceFix/*.php 		usr/lib/abraflexi-pricefixer/PriceFix
 #i18n/cs_CZ/LC_MESSAGES/*.mo     usr/share/locale/cs_CZ/LC_MESSAGES/
 #i18n/en_US/LC_MESSAGES/*.mo     usr/share/locale/en_US/LC_MESSAGES/
 debian/tmp/composer.json        usr/lib/abraflexi-pricefixer/
+abraflexi-pricefixer.svg	usr/share/icons/hicolor/scalable/apps/
+io.github.vitexsoftware.abraflexi_pricefixer.metainfo.xml	usr/share/metainfo/

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="console-application">
   <id>io.github.vitexsoftware.abraflexi_pricefixer</id>
+  <icon type="stock">abraflexi-pricefixer</icon>
   <metadata_license>MIT</metadata_license>
   <project_license>MIT</project_license>
   <name>abraflexi-pricefixer</name>
