@@ -285,16 +285,16 @@
         },
         {
             "name": "spojenet/flexibee",
-            "version": "v3.7.2",
+            "version": "v3.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Spoje-NET/php-abraflexi.git",
-                "reference": "b9684279d00c66cd1467d05f96e044079d969b89"
+                "reference": "504cc279b00b8b846182bcd309d2eeedf24a5ed8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Spoje-NET/php-abraflexi/zipball/b9684279d00c66cd1467d05f96e044079d969b89",
-                "reference": "b9684279d00c66cd1467d05f96e044079d969b89",
+                "url": "https://api.github.com/repos/Spoje-NET/php-abraflexi/zipball/504cc279b00b8b846182bcd309d2eeedf24a5ed8",
+                "reference": "504cc279b00b8b846182bcd309d2eeedf24a5ed8",
                 "shasum": ""
             },
             "require": {
@@ -339,9 +339,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Spoje-NET/php-abraflexi/issues",
-                "source": "https://github.com/Spoje-NET/php-abraflexi/tree/v3.7.2"
+                "source": "https://github.com/Spoje-NET/php-abraflexi/tree/v3.7.3"
             },
-            "time": "2026-03-23T20:23:57+00:00"
+            "time": "2026-05-13T05:50:07+00:00"
         },
         {
             "name": "vitexsoftware/ease-core",
