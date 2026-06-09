@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/multiflexi.app.schema.json",
-  "schemaVersion": "3.2.1",
+  "schemaVersion": "3.4.0",
   "uuid": "2a485658-4c14-49de-addd-901d131e669e",
   "name": {
     "en": "Price Fixer",
@@ -19,6 +19,13 @@
   "image": "",
   "ociimage": "docker.io/vitexsoftware/abraflexi-pricefixer",
   "executable": "abraflexi-pricefixer-all",
+  "events": {
+    "emits": {
+      "price.updated": {
+        "description": "Price records were updated"
+      }
+    }
+  },
   "environment": {
     "ABRAFLEXI_COMPANY": {
       "type": "string",
