@@ -10,6 +10,9 @@
     "en": "Bundle product price updater for AbraFlexi",
     "cs": "Aktualizátor cen sad produktů pro AbraFlexi"
   },
+  "requirements": [
+    "AbraFlexi"
+  ],
   "tags": [
     "AbraFlexi",
     "Price",

@@ -10,6 +10,9 @@
     "en": "Copy last warehouse price (posledCena) to purchase price (nakupCena) for all non-bundle products in AbraFlexi",
     "cs": "Zkopíruje poslední skladovou cenu (posledCena) do nákupní ceny (nakupCena) pro všechny nesadové produkty v AbraFlexi"
   },
+  "requirements": [
+    "AbraFlexi"
+  ],
   "tags": [
     "AbraFlexi",
     "Price",
