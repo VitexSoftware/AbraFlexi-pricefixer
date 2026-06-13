@@ -147,9 +147,29 @@ class Bundler extends Cenik
             $this->loadFromAbraFlexi($bundleCode);
             $pprice = $this->getDataValue('nakupCena');
 
+            $updates = ['id' => \AbraFlexi\Functions::code($bundleCode)];
+
+            // Ensure skupZboz is set to SADA group
             if ($this->getDataValue('skupZboz') !== $group) {
-                $this->insertToAbraFlexi(['id' => \AbraFlexi\Functions::code($bundleCode), 'skupZboz' => $group]);
-                $this->addStatusMessage($progress.' '.sprintf(_('%s: Fixing Group to %s '), $bundleCode, $group), $this->lastResponseCode === 201 ? 'success' : 'error');
+                $updates['skupZboz'] = $group;
+            }
+
+            // Ensure typZasoby is VÝROBOK for all bundles
+            if ($this->getDataValue('typZasobyK') !== 'typZasoby.vyrobek') {
+                $updates['typZasobyK'] = 'typZasoby.vyrobek';
+            }
+
+            // Ensure # prefix on kod (after NEAKT_ if present, never double-add)
+            $currentKod = (string) $this->getDataValue('kod');
+            $neaktPrefix = str_starts_with($currentKod, 'NEAKT_') ? 'NEAKT_' : '';
+            $baseKod     = $neaktPrefix ? substr($currentKod, 6) : $currentKod;
+            if (!str_starts_with($baseKod, '#')) {
+                $updates['kod'] = $neaktPrefix . '#' . $baseKod;
+            }
+
+            if (\count($updates) > 1) {
+                $this->insertToAbraFlexi($updates);
+                $this->addStatusMessage($progress.' '.sprintf(_('%s: Fixing attributes'), $bundleCode), $this->lastResponseCode === 201 ? 'success' : 'error');
             }
 
             $bundlePrice = $this->overallPrice();
