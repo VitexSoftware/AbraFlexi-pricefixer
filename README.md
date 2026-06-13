@@ -14,9 +14,10 @@ Product price updater for AbraFlexi
 
 ## Commands included
 
-* `abraflexi-pricefixer`       - fix price of one pricelist item
-* `abraflexi-pricefixer-all`   - fix price of all pricelist items
-* `abraflexi-pricefixer-init`  - prepare AbraFlexi for pricefixer
+* `abraflexi-pricefixer`        - fix price of one pricelist item
+* `abraflexi-pricefixer-all`    - fix price of all pricelist items
+* `abraflexi-pricefixer-stock`  - copy last warehouse price (posledCena) to purchase price (nakupCena) for all non-bundle products
+* `abraflexi-pricefixer-init`   - prepare AbraFlexi for pricefixer
 
 ## Configuration
 
@@ -27,7 +28,8 @@ Here are the configuration keys used with AbraFlexi:
 * `ABRAFLEXI_PASSWORD` - AbraFlexi password
 * `ABRAFLEXI_URL` - AbraFlexi API URL
 * `ABRAFLEXI_COMPANY` - AbraFlexi company code
-* `ABRAFLEXI_GROUP` - Group of Goods for sets of items
+* `ABRAFLEXI_GROUP` - Group of Goods for sets of items (default: `code:SADA`)
+* `ABRAFLEXI_WAREHOUSE` - Warehouse code to read last price from (default: `code:SKLAD-DS`, used by `abraflexi-pricefixer-stock`)
 * `EASE_LOGGER` - List of logging drivers to be used
 
 Please make sure to set these configuration keys appropriately before running the code.

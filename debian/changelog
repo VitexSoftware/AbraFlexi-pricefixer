@@ -1,8 +1,12 @@
-abraflexi-pricefixer (2.11.3) UNRELEASED; urgency=medium
+abraflexi-pricefixer (2.12.0) UNRELEASED; urgency=medium
 
-  * deps updata
+  * feat: add abraflexi-pricefixer-stock command
+  * StockPriceFixer: copy posledCena from skladova-karta to nakupCena in
+    cenik for all non-SADA warehouse products with non-zero last price
+  * Add MultiFlexi app definition for stock price fixer
+  * deps update
 
- -- vitex <info@vitexsoftware.cz>  Sat, 14 Mar 2026 18:06:47 +0100
+ -- vitex <info@vitexsoftware.cz>  Fri, 13 Jun 2026 02:20:00 +0200
 
 abraflexi-pricefixer (2.11.2) jammy; urgency=medium
 
