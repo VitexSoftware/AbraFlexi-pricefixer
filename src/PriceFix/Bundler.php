@@ -149,6 +149,13 @@ class Bundler extends Cenik
 
             $updates = ['id' => \AbraFlexi\Functions::code($bundleCode)];
 
+            // AbraFlexi requires 'Název' (nazev) to be filled whenever a record is
+            // updated. Some bundles exist without a name; backfill it from the code
+            // so attribute-fixing updates below do not fail with a 400 error.
+            if (empty($this->getDataValue('nazev'))) {
+                $updates['nazev'] = \AbraFlexi\Functions::uncode($bundleCode);
+            }
+
             // Ensure skupZboz is set to SADA group
             if ($this->getDataValue('skupZboz') !== $group) {
                 $updates['skupZboz'] = $group;
