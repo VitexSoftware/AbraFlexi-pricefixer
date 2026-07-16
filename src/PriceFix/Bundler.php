@@ -100,17 +100,22 @@ class Bundler extends Cenik
      */
     public function saveBundlePrice(float $price)
     {
-        return $this->insertToAbraFlexi([
+        $updates = [
             'id' => $this->getRecordIdent(),
             'nakupCena' => $price,
             'cena2' => $price,
             'cena3' => $price,
             'cena4' => $price,
             'cena5' => $price,
-            // "cenaZaklBezDph" ?
-            // "cenaZaklVcDph" ?
-            // "cenaZakl" ?
-        ]);
+        ];
+
+        // Ensure 'nazev' is present when performing updates — AbraFlexi may
+        // require the name field on any update even if unchanged.
+        if (empty($this->getDataValue('nazev'))) {
+            $updates['nazev'] = \AbraFlexi\Functions::uncode($this->getRecordCode());
+        }
+
+        return $this->insertToAbraFlexi($updates);
     }
 
     /**
