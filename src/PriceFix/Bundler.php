@@ -107,13 +107,12 @@ class Bundler extends Cenik
             'cena3' => $price,
             'cena4' => $price,
             'cena5' => $price,
+            // AbraFlexi requires 'nazev' on every update call, even when it is
+            // already set and unchanged — omitting it here fails with
+            // "Pole 'Název' musí být vyplněno" regardless of the record's
+            // current name. Always resend the current (or backfilled) value.
+            'nazev' => $this->getDataValue('nazev') ?: \AbraFlexi\Functions::uncode($this->getRecordCode()),
         ];
-
-        // Ensure 'nazev' is present when performing updates — AbraFlexi may
-        // require the name field on any update even if unchanged.
-        if (empty($this->getDataValue('nazev'))) {
-            $updates['nazev'] = \AbraFlexi\Functions::uncode($this->getRecordCode());
-        }
 
         return $this->insertToAbraFlexi($updates);
     }
@@ -154,13 +153,6 @@ class Bundler extends Cenik
 
             $updates = ['id' => \AbraFlexi\Functions::code($bundleCode)];
 
-            // AbraFlexi requires 'Název' (nazev) to be filled whenever a record is
-            // updated. Some bundles exist without a name; backfill it from the code
-            // so attribute-fixing updates below do not fail with a 400 error.
-            if (empty($this->getDataValue('nazev'))) {
-                $updates['nazev'] = \AbraFlexi\Functions::uncode($bundleCode);
-            }
-
             // Ensure skupZboz is set to SADA group
             if ($this->getDataValue('skupZboz') !== $group) {
                 $updates['skupZboz'] = $group;
@@ -180,6 +172,11 @@ class Bundler extends Cenik
             }
 
             if (\count($updates) > 1) {
+                // AbraFlexi requires 'nazev' on every update call, even when it
+                // is already set and unchanged (see saveBundlePrice()) — resend
+                // the current (or backfilled) value whenever we update at all.
+                $updates['nazev'] = $this->getDataValue('nazev') ?: \AbraFlexi\Functions::uncode($bundleCode);
+
                 $this->insertToAbraFlexi($updates);
                 $this->addStatusMessage($progress.' '.sprintf(_('%s: Fixing attributes'), $bundleCode), $this->lastResponseCode === 201 ? 'success' : 'error');
             }
