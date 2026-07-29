@@ -2,6 +2,8 @@
 
 [![wakatime](https://wakatime.com/badge/user/5abba9ca-813e-43ac-9b5f-b1cfdf3dc1c7/project/018e4b01-3133-41a5-8bc4-39752d34fe20.svg)](https://wakatime.com/badge/user/5abba9ca-813e-43ac-9b5f-b1cfdf3dc1c7/project/018e4b01-3133-41a5-8bc4-39752d34fe20)
 [![Docker](https://github.com/VitexSoftware/AbraFlexi-pricefixer/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/VitexSoftware/AbraFlexi-pricefixer/actions/workflows/docker-publish.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![Packaging: deb](https://img.shields.io/badge/packaging-.deb-red?logo=debian&logoColor=white)
 
 Product price updater for AbraFlexi
 
