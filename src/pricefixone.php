@@ -42,12 +42,21 @@ $result = [
     'bundles' => [],
 ];
 $exitCode = 0;
+$inputError = null;
 
 if ($pricelistCode === '' && $pricelistId !== '') {
-    $pricelistCode = (string) $bundler->getItemCodeById((int) $pricelistId);
+    if (!ctype_digit($pricelistId) || (int) $pricelistId < 1) {
+        $inputError = sprintf('Invalid pricelist record ID: %s', $pricelistId);
+    } else {
+        $pricelistCode = (string) $bundler->getItemCodeById((int) $pricelistId);
+    }
 }
 
-if ($pricelistCode === '') {
+if (null !== $inputError) {
+    $message = $inputError;
+    $status = 'error';
+    $exitCode = 1;
+} elseif ($pricelistCode === '') {
     $message = 'Missing pricelist product code or record ID';
     $status = 'error';
     $exitCode = 1;
