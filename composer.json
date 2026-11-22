@@ -2,7 +2,7 @@
     "name": "vitexsoftware/abraflexi-pricefixer",
     "description": "Product price updater for AbraFlexi",
     "license": "MIT",
-    "bin": ["src/fixall.php", "src/pricefix.php", "src/init.php"],
+    "bin": ["src/fixall.php", "src/pricefix.php", "src/pricefixone.php", "src/init.php"],
     "type": "project",
     "authors": [
         {

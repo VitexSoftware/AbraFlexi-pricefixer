@@ -1,0 +1,2 @@
+#!/bin/bash
+exec php -f /usr/share/abraflexi-pricefixer/pricefixone.php -- "$@"

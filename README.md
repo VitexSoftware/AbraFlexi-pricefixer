@@ -16,8 +16,9 @@ Product price updater for AbraFlexi
 
 ## Commands included
 
-* `abraflexi-pricefixer`        - fix price of one pricelist item
-* `abraflexi-pricefixer-all`    - fix price of all pricelist items
+* `abraflexi-pricefixer`        - fix the price of one bundle identified by its code
+* `abraflexi-pricefixer-all`    - fix the prices of all bundles
+* `pricefix-one <item-code>`    - find and recalculate every bundle containing the changed item
 * `abraflexi-pricefixer-stock`  - copy last warehouse price (posledCena) to purchase price (nakupCena) for all non-bundle products
 * `abraflexi-pricefixer-init`   - prepare AbraFlexi for pricefixer
 

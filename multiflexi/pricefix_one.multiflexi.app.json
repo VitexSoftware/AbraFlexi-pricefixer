@@ -1,0 +1,189 @@
+{
+  "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/schema/application.json",
+  "schemaVersion": "3.4.0",
+  "uuid": "7ab29f25-2d7d-45c0-8f26-88af2cbee3d8",
+  "name": {
+    "en": "Recalculate Bundles for Item",
+    "cs": "Přepočet sad po změně položky"
+  },
+  "description": {
+    "en": "Recalculate all AbraFlexi product bundles containing the changed pricelist item",
+    "cs": "Přepočítá všechny produktové sady v AbraFlexi obsahující změněnou položku ceníku"
+  },
+  "requirements": [
+    "AbraFlexi"
+  ],
+  "tags": [
+    "AbraFlexi",
+    "Price",
+    "Fixer",
+    "Event"
+  ],
+  "homepage": "https://github.com/VitexSoftware/AbraFlexi-pricefixer",
+  "image": "",
+  "ociimage": "docker.io/vitexsoftware/abraflexi-pricefixer",
+  "executable": "pricefix-one",
+  "cmdparamsTemplate": "${PRICELIST_CODE}",
+  "events": {
+    "consumes": {
+      "cenik.updated": {
+        "description": {
+          "en": "An AbraFlexi pricelist item was updated",
+          "cs": "Položka ceníku AbraFlexi byla změněna"
+        },
+        "format": "json"
+      }
+    },
+    "emits": {
+      "bundle.price.updated": {
+        "description": {
+          "en": "Affected bundle prices were recalculated",
+          "cs": "Ceny dotčených sad byly přepočítány"
+        }
+      }
+    }
+  },
+  "produces": {
+    "pricefix_report": {
+      "description": {
+        "en": "Bundle recalculation report",
+        "cs": "Výsledný report přepočtu sad"
+      },
+      "format": "json",
+      "fields": {
+        "pricelistCode": {
+          "type": "string"
+        },
+        "bundlesMatched": {
+          "type": "integer",
+          "path": "$.metrics.bundlesMatched"
+        },
+        "bundlesUpdated": {
+          "type": "integer",
+          "path": "$.metrics.bundlesUpdated"
+        }
+      }
+    }
+  },
+  "artifacts": [
+    {
+      "name": {
+        "en": "Bundle recalculation report",
+        "cs": "Report přepočtu sad"
+      },
+      "path": "pricefix-one-report.json",
+      "type": "file",
+      "description": {
+        "en": "JSON report conforming to the MultiFlexi report schema",
+        "cs": "JSON report odpovídající schématu reportů MultiFlexi"
+      }
+    }
+  ],
+  "environment": {
+    "ABRAFLEXI_COMPANY": {
+      "type": "string",
+      "description": {
+        "en": "AbraFlexi company code",
+        "cs": "Kód společnosti v AbraFlexi"
+      },
+      "defval": "demo_de",
+      "required": true,
+      "category": "API"
+    },
+    "ABRAFLEXI_LOGIN": {
+      "type": "string",
+      "description": {
+        "en": "AbraFlexi Login",
+        "cs": "AbraFlexi Login"
+      },
+      "defval": "winstrom",
+      "required": true,
+      "category": "API"
+    },
+    "ABRAFLEXI_PASSWORD": {
+      "type": "password",
+      "description": {
+        "en": "AbraFlexi password",
+        "cs": "AbraFlexi heslo"
+      },
+      "defval": "winstrom",
+      "required": true,
+      "category": "API"
+    },
+    "ABRAFLEXI_URL": {
+      "type": "url",
+      "description": {
+        "en": "AbraFlexi Server URI",
+        "cs": "AbraFlexi Server URI"
+      },
+      "defval": "https://demo.flexibee.eu:5434",
+      "required": true,
+      "category": "API"
+    },
+    "ABRAFLEXI_GROUP": {
+      "type": "string",
+      "description": {
+        "en": "Group of Goods for sets of items",
+        "cs": "Skupina zboží pro sady položek"
+      },
+      "defval": "code:SADA",
+      "required": false,
+      "category": "API"
+    },
+    "PRICELIST_CODE": {
+      "type": "string",
+      "description": {
+        "en": "Code of the changed pricelist item",
+        "cs": "Kód změněné položky ceníku"
+      },
+      "required": false,
+      "category": "Behavior"
+    },
+    "PRICELIST_ID": {
+      "type": "integer",
+      "description": {
+        "en": "AbraFlexi record ID of the changed pricelist item; resolved to a product code before recalculation",
+        "cs": "ID změněného záznamu ceníku; před přepočtem se převede na kód produktu"
+      },
+      "required": false,
+      "category": "Behavior"
+    },
+    "RESULT_FILE": {
+      "type": "file-path",
+      "description": {
+        "en": "Path to the MultiFlexi report JSON",
+        "cs": "Cesta k reportu MultiFlexi ve formátu JSON"
+      },
+      "defval": "pricefix-one-report.json",
+      "required": true,
+      "category": "Behavior"
+    },
+    "EASE_LOGGER": {
+      "type": "string",
+      "description": {
+        "en": "Write log messages using",
+        "cs": "Zapisovat log zprávy pomocí"
+      },
+      "defval": "console|syslog",
+      "required": false,
+      "category": "Behavior"
+    }
+  },
+  "exitCodes": {
+    "0": {
+      "description": {
+        "en": "Recalculation completed",
+        "cs": "Přepočet dokončen"
+      },
+      "severity": "success"
+    },
+    "1": {
+      "description": {
+        "en": "Recalculation failed or required input was missing",
+        "cs": "Přepočet selhal nebo chyběl povinný vstup"
+      },
+      "severity": "error",
+      "retry": true
+    }
+  }
+}
